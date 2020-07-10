@@ -12,7 +12,7 @@
 					<string>software-package</string>
 					<key>url</key>
 					<!-- 需要安装的ipa包在服务器的路径 -->
-					<string>http://192.168.0.103:8082/comxiaobao_war/xlp.ipa</string>
+					<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -21,7 +21,7 @@
 					<true/>
 					<key>url</key>
 					<!-- 安装时需要显示的大图标（1024*1024）在服务器的路径 -->
-					<string>http://192.168.0.103:8082/comxiaobao_war/big.png</string>
+					<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/big.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -30,7 +30,7 @@
 					<true/>
 					<key>url</key>
 					<!-- 安装时需要显示的小图标（180*180）在服务器的路径 -->
-					<string>http://192.168.0.103:8082/comxiaobao_war/big.ipa</string>
+					<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/small.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
