@@ -6,7 +6,7 @@
         <key>PayloadContent</key>
         <dict>
             <key>URL</key>
-            <string>http://dev.skyfox.org/udid/index.php</string> <!--接收数据的接口地址-->
+            <string>https://dev.skyfox.org/udid/index.php</string> <!--接收数据的接口地址-->
             <key>DeviceAttributes</key>
             <array>
                 <string>SERIAL</string>
