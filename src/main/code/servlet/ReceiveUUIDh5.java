@@ -1,6 +1,5 @@
 package servlet;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +14,25 @@ import java.io.*;
  */
 
 @WebServlet("/receiveUUIDh5")
-@CrossOrigin
 public class ReceiveUUIDh5 extends HttpServlet {
+
+    private static final long serialVersionUID = 5522372203700422672L;
+
+
+
+    protected void doOptions(HttpServletRequest request, HttpServletResponse response) {
+
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "Authorization,Origin,X-Requested-With,Content-Type,Accept,"
+                + "content-Type,origin,x-requested-with,content-type,accept,authorization,token,id,X-Custom-Header,X-Cookie,Connection,User-Agent,Cookie,*");
+        response.setHeader("Access-Control-Request-Headers", "Authorization,Origin, X-Requested-With,content-Type,Accept");
+        response.setHeader("Access-Control-Expose-Headers", "*");
+    }
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ( "text/html;charset=UTF-8" );
 
