@@ -6,7 +6,7 @@
         <key>PayloadContent</key>
         <dict>
             <key>URL</key>
-            <string>http://ad092a2f3e3f.ngrok.io/receiveUUID</string> <!--接收数据的接口地址-->
+            <string>http://192.168.0.103:8080/receiveUUID</string> <!--接收数据的接口地址-->
             <key>DeviceAttributes</key>
             <array>
                 <string>SERIAL</string>
