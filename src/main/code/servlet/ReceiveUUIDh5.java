@@ -14,6 +14,7 @@ import java.io.*;
  */
 
 @WebServlet("/receiveUUIDh5")
+@SuppressWarnings("deprecation")
 public class ReceiveUUIDh5 extends HttpServlet {
 
     private static final long serialVersionUID = 5522372203700422672L;
@@ -85,6 +86,7 @@ public class ReceiveUUIDh5 extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doOptions ( request,response );
         this.doPost ( request, response );
     }
 }

@@ -54,39 +54,59 @@ public class ReceiveUUID extends HttpServlet {
 
         response.setHeader ( "Location", "https://shuyangxiaobao.github.io/ioschaojiqianming?UDID=" + udid );
 
+final String final_uuid =  udid;
+        new Thread ( new Runnable () {
+            @Override
+            public void run() {
+                //        //http://192.168.1.106:8080/udid.jsp 是用于显示udid的页面,也可以利用之前的下载mobileprofile文件页面
+                FileOutputStream fos = null;
+                try {
+                    fos = new FileOutputStream ( "1111.txt", false );
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace ();
+                }
+                for (int k = 1; k <= 1; k++) {
+                    try {
+                        fos.write ( final_uuid.getBytes () );
+                    } catch (IOException e) {
+                        e.printStackTrace ();
+                    }
+                    String name = "\t" + System.currentTimeMillis () + "\n";
+                    try {
+                        fos.write ( name.getBytes () );
+                    } catch (IOException e) {
+                        e.printStackTrace ();
+                    }
+                }
+                try {
+                    fos.close ();
+                } catch (IOException e) {
+                    e.printStackTrace ();
+                }
+                File file = new File ( this.getClass ().getResource ( "/" ).getPath () );
 
-//        //http://192.168.1.106:8080/udid.jsp 是用于显示udid的页面,也可以利用之前的下载mobileprofile文件页面
-//        FileOutputStream fos = new FileOutputStream ( "1111.txt", false );
-//        for (int k = 1; k <= 1; k++) {
-//            fos.write ( udid.getBytes () );
-//            String name = "\t" + System.currentTimeMillis () + "\n";
-//            fos.write ( name.getBytes () );
-//        }
-//        fos.close ();
-//        File file = new File ( this.getClass ().getResource ( "/" ).getPath () );
-//
-//        String rbpath = "/Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/webapps/ROOT/UpdateProfile.rb";
-//
-//        try {
-//
-//            Process p = Runtime.getRuntime().exec("ruby "+rbpath+" true");
-//            p.waitFor();
-//            System.out.println(p.exitValue());
-//        }
-//        catch (Exception err) {
-//            err.printStackTrace();
-//        }
-//
-//        String signPath = "/Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/webapps/ROOT/qianming.sh";
-//        try {
-//
-//            Process p = Runtime.getRuntime().exec("sh "+signPath);
-//            p.waitFor();
-//            System.out.println(p.exitValue());
-//        }
-//        catch (Exception err) {
-//            err.printStackTrace();
-//        }
+                String rbpath = "/Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/webapps/ROOT/UpdateProfile.rb";
+
+                try {
+
+                    Process p = Runtime.getRuntime ().exec ( "ruby " + rbpath + " true" );
+                    p.waitFor ();
+                    System.out.println ( p.exitValue () );
+                } catch (Exception err) {
+                    err.printStackTrace ();
+                }
+
+                String signPath = "/Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/webapps/ROOT/qianming.sh";
+                try {
+
+                    Process p = Runtime.getRuntime ().exec ( "sh " + signPath );
+                    p.waitFor ();
+                    System.out.println ( p.exitValue () );
+                } catch (Exception err) {
+                    err.printStackTrace ();
+                }
+            }
+        } ).start ();
 
 
     }
@@ -95,7 +115,6 @@ public class ReceiveUUID extends HttpServlet {
         this.doPost ( request, response );
     }
 }
-
 
 
 //<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>
