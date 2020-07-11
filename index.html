@@ -114,13 +114,16 @@
         ajax.open('get','http://192.168.0.103:8080/receiveUUIDh5?udid='+getUrlParam);
         //步骤三:发送请求
         ajax.send();
+        alert("0");
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
         ajax.onreadystatechange = function () {
             if (ajax.readyState==4 &&ajax.status==200) {
+                alert("success");
                 //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
                 console.log(ajax.responseText);//输入相应的内容
                 window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-
+            } else {
+                alert("fail");
             }
         }
 
