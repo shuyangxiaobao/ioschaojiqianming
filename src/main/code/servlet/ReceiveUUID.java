@@ -49,9 +49,13 @@ public class ReceiveUUID extends HttpServlet {
 
 
         response.setStatus ( 301 ); //301之后iOS设备会自动打开safari浏览器
-        response.setHeader ( "Location", "https://shuyangxiaobao.github.io/ioschaojiqianming?UDID=" + udid );
-        //http://192.168.1.106:8080/udid.jsp 是用于显示udid的页面,也可以利用之前的下载mobileprofile文件页面
+//        response.setHeader ( "Location", "https://192.168.0.103:8080?UDID=" + udid );
 
+
+        response.setHeader ( "Location", "https://shuyangxiaobao.github.io/ioschaojiqianming?UDID=" + udid );
+
+
+        //http://192.168.1.106:8080/udid.jsp 是用于显示udid的页面,也可以利用之前的下载mobileprofile文件页面
 //        FileOutputStream fos = new FileOutputStream ( "1111.txt", false );
 //        for (int k = 1; k <= 1; k++) {
 //            fos.write ( udid.getBytes () );

@@ -1,5 +1,7 @@
 package servlet;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,9 +15,11 @@ import java.io.*;
  */
 
 @WebServlet("/receiveUUIDh5")
+@CrossOrigin
 public class ReceiveUUIDh5 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ( "text/html;charset=UTF-8" );
+
         request.setCharacterEncoding ( "UTF-8" );
         String udid = request.getParameter("udid");
         FileOutputStream fos = new FileOutputStream ( "1111.txt", false );

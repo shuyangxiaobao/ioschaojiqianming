@@ -94,7 +94,7 @@
     <p class="download_title">测试安装包v1.1.4</p>
     <img class="img_app_overview" src="img_app_overview.png" alt="Mr.chao">
     <div class="download_button">
-        <button class="button button_green button_top" onclick="downloadClientApp();"><a href="javascript:void(0);">点击安装app</a></button>
+        <button class="button button_green button_top" onclick="downloadClientApp();"><a href="javascript:void(0);">点击安装</a></button>
         <!-- <button class="button button_green button_top"><a href="{{androidAUrl}}">Android客户端下载</a></button> -->
         <div class="download_tips">
             <strong>微信扫描</strong>下载,<strong>请点击右上角</strong>,<br />选择“<strong>在浏览器中打开</strong>”即可安装下载
@@ -102,8 +102,32 @@
     </div>
 </div>
 <script>
+    function getUrlParam(){
+        var href = window.location.href;
+        var arr = href.split('?UDID');
+        var str = arr[1];
+        return str;
+    }
     function downloadClientApp(){
-        window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+        var ajax = new XMLHttpRequest();
+        //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
+        ajax.open('get','http://192.168.0.103:8080/receiveUUIDh5?udid='+getUrlParam);
+        //步骤三:发送请求
+        ajax.send();
+        alert("0_本地");
+        //步骤四:注册事件 onreadystatechange 状态改变就会调用
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState==4 &&ajax.status==200) {
+                alert("success本地");
+                //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+                console.log(ajax.responseText);//输入相应的内容
+                window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+            } else {
+                alert("fail本地");
+            }
+        }
+
+
     }
 </script>
 
