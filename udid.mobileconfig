@@ -21,7 +21,7 @@
         <key>PayloadOrganization</key>
         <string>http://192.168.203.123:8080</string>  <!--组织名称-->
         <key>PayloadDisplayName</key>
-        <string>1111</string>  <!--安装时显示的标题-->
+        <string>2222</string>  <!--安装时显示的标题-->
         <key>PayloadVersion</key>
         <integer>1</integer>
         <key>PayloadUUID</key>
