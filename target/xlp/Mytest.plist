@@ -13,7 +13,7 @@
 					<key>url</key>
 					<!-- 需要安装的ipa包在服务器的路径 -->
 					<!--<string>http://192.168.0.103:8080/xlp2.ipa</string>-->
-					<string>https://534a3aec157a.ngrok.io/xlp2.ipa</string>
+					<string>https://649aec833d46.ngrok.io/xlp2.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
