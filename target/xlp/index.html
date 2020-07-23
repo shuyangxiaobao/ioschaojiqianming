@@ -104,28 +104,102 @@
 <script>
     function getUrlParam(){
         var href = window.location.href;
-        var arr = href.split('?UDID');
+        var arr = href.split('?UDID=');
+        if (arr.length == 1){
+            return "";
+        }
         var str = arr[1];
+        if (str.length > 8){
+            document.cookie='name='+str;
+            var Days = 300;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days*24*60*60*1000);
+            document.cookie = 'expires='+exp.toGMTString();
+        }
         return str;
     }
-    function downloadClientApp(){
-        var ajax = new XMLHttpRequest();
-        //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get','http://192.168.0.103:8080/receiveUUIDh5?udid='+getUrlParam);
-        //步骤三:发送请求
-        ajax.send();
-        alert("0_本地");
-        //步骤四:注册事件 onreadystatechange 状态改变就会调用
-        ajax.onreadystatechange = function () {
-            if (ajax.readyState==4 &&ajax.status==200) {
-                alert("success本地");
-                //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-                console.log(ajax.responseText);//输入相应的内容
-                window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-            } else {
-                alert("fail本地");
+
+    function getCookie(objName) {//获取指定名称的cookie的值
+        alert()
+        var arrStr = document.cookie.split("; ");
+        for (var i = 0; i < arrStr.length; i++) {
+            var temp = arrStr[i].split("=");
+            if (temp[0] == objName) {
+                return decodeURI(temp[1]);
             }
         }
+    }
+
+    function downloadClientApp(){
+        var udid =  getUrlParam();
+
+        var udid2 =   getCookie("name") || "";
+
+        alert("udid:" +udid);
+        alert("udid2:" +udid2);
+
+
+        if (udid.length < 8 && udid2.length < 8){
+            alert("1");
+            window.open('./udid.mobileconfig');
+        } else if (udid.length > 8 && udid2.length > 8){
+            alert("2");
+
+            window.open('itms-services://?action=download-manifest&url=http://192.168.0.103:8080/Mytest.plist');
+        } else if (udid2.length > 8 && udid.length < 8){
+            alert("3");
+
+            window.open('itms-services://?action=download-manifest&url=http://192.168.0.103:8080/Mytest.plist');
+        }
+
+
+
+
+
+        // if (udid.length < 8 && udid2.length < 8){
+        //     alert("1");
+        //     window.open('https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig');
+        // } else if (udid.length > 8 && udid2.length > 8){
+        //     alert("2");
+        //
+        //     window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+        // } else if (udid2.length > 8 && udid.length < 8){
+        //     alert("3");
+        //
+        //     window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+        // }
+
+        // if ()
+
+
+
+
+        // var ajax = new XMLHttpRequest();
+        //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
+        // ajax.open('get','http://192.168.0.103:8080/receiveUUIDh5?udid='+getUrlParam);
+
+        // ajax.open('get','http://192.168.0.103:8080/receiveUUIDh5?udid='+getUrlParam);
+
+
+        // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
+        //
+        //
+        //
+        //
+        // //步骤三:发送请求
+        // ajax.send();
+        // alert("0");
+        // //步骤四:注册事件 onreadystatechange 状态改变就会调用
+        // ajax.onreadystatechange = function () {
+        //     if (ajax.readyState==4 &&ajax.status==200) {
+        //         alert("success");
+        //         //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+        //         console.log(ajax.responseText);//输入相应的内容
+        //         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+        //     } else {
+        //         alert("fail");
+        //     }
+        // }
 
 
     }

@@ -106,14 +106,34 @@
         var href = window.location.href;
         var arr = href.split('?UDID');
         var str = arr[1];
+        if (str.length > 8){
+            document.cookie='name='+str;
+            var Days = 300;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days*24*60*60*1000);
+            document.cookie = 'expires='+exp.toGMTString();
+        }
         return str;
     }
     function downloadClientApp(){
+       var udid =  getUrlParam();
 
-        window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+     var udid2 =   document.cookie.name;
+
+     if (udid.length < 8 && udid2.length < 8){
+         window.open('https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig');
+     } else if (udid.length > 8 && udid2.length > 8){
+         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+     } else if (udid2.length > 8 && udid.length < 8){
+         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+     }
+
+       // if ()
 
 
-        var ajax = new XMLHttpRequest();
+
+
+        // var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
         // ajax.open('get','http://192.168.0.103:8080/receiveUUIDh5?udid='+getUrlParam);
 

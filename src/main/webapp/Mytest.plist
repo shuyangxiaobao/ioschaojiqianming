@@ -12,10 +12,10 @@
 					<string>software-package</string>
 					<key>url</key>
 					<!-- 这是内网地址，访问速度快 -->
-					<!--<string>http://192.168.0.103:8080/xlp2.ipa</string>-->
+					<string>http://192.168.0.103:8080/xlp2.ipa</string>
 					
 					<!--访问github-->
-					<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>
+					<!--<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>-->
 <!-- 					<string>https://649aec833d46.ngrok.io/xlp2.ipa</string> -->
 					<!--外网可以访问，但是速度慢-->
 				</dict>
