@@ -8,16 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta charset="UTF-8">
     <title>Ad Hoc .ipa在线安装</title>
     <style>
-        *{
+        * {
             margin: 0px;
             padding: 0px;
         }
 
-        .download_div{
+        .download_div {
             width: 100%;
             height: 100%;
             text-align: center;
@@ -26,25 +27,26 @@
             font-size: 2em;
         }
 
-        .download_title{
+        .download_title {
             padding-top: 1em;
             padding-bottom: 1em;
             /*background-color: #d7e2f7;*/
             background: -webkit-gradient(linear, left top, left bottom, from(#d7e2f7), to(#ffffff));
         }
+
         .img_app_overview {
             width: 100%;
             height: 480px;
             display: block;
         }
 
-        .download_button{
+        .download_button {
             /*margin-top: -0.3em;*/
-            background: -webkit-gradient(linear,left top,left bottom,from(#879ee3), to(#ffffff));
+            background: -webkit-gradient(linear, left top, left bottom, from(#879ee3), to(#ffffff));
             width: 100%;
         }
 
-        .button{
+        .button {
             /*margin-top: 5em;*/
             margin-left: 0.8em;
             display: inline-block;
@@ -54,30 +56,30 @@
             text-decoration: none;
             font: 14px/100% Arial, Helvetica, sans-serif;
             padding: .5em 2em .55em;
-            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
             -webkit-border-radius: .5em;
             -moz-border-radius: .5em;
             border-radius: .5em;
-            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-            box-shadow: 0 1px 2px rgba(0,0,0,.2);
-            color:#fff;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            color: #fff;
         }
 
-        .button_green{
+        .button_green {
             background: #c8dd95;
-            background: -webkit-gradient(linear, left top, left bottom, from(#7a71d0), to(#ffffff) );
+            background: -webkit-gradient(linear, left top, left bottom, from(#7a71d0), to(#ffffff));
             background: -moz-linear-gradient(-90deg, #7a71d0, #ffffff);
         }
 
-        .download_tips{
+        .download_tips {
             font-size: 0.5em;
             margin-top: 1em;
             font-weight: normal;
             margin-top: 3em;
         }
 
-        .button_top{
+        .button_top {
             margin-top: 3em;
         }
 
@@ -87,7 +89,7 @@
         }
 
         /*mobile*/
-        @media screen and (max-width: 1199px){
+        @media screen and (max-width: 1199px) {
             .img_app_overview {
                 width: 100%;
                 height: 250px;
@@ -98,18 +100,27 @@
 </head>
 <body>
 <div class="download_div">
-    <p class="download_title">测试安装包v1.1.4</p>
-    <img class="img_app_overview" src="img_app_overview.png" alt="Mr.chao">
-    <div class="download_button">
-        <button class="button button_green button_top" onclick="downloadClientApp();"><a href="javascript:void(0);">点击安装</a></button>
-        <!-- <button class="button button_green button_top"><a href="{{androidAUrl}}">Android客户端下载</a></button> -->
-        <div class="download_tips">
-            <strong>微信扫描22222</strong>下载,<strong>请点击右上角</strong>,<br />选择“<strong>在浏览器中打开</strong>”即可安装下载
+
+
+        <p class="download_title">test.jsp</p>
+        <img class="img_app_overview" src="img_app_overview.png" alt="Mr.chao">
+        <div class="download_button">
+            <button class="button button_green button_top" onclick="anzhuangclick();"><a href="javascript:void(0);">安装
+            </a>
+
+                <button class="button button_green button_top" onclick="downloadClientApp();"><a
+                        href="javascript:void(0);">首次安装</a>
+            </button>
+            <!-- <button class="button button_green button_top"><a href="{{androidAUrl}}">Android客户端下载</a></button> -->
+            <div class="download_tips">
+                <strong>微信扫描22222</strong>下载,<strong>请点击右上角</strong>,<br/>选择“<strong>在浏览器中打开</strong>”即可安装下载
+            </div>
         </div>
-    </div>
+
     <div class="popup" style="display:none;"
-         style="position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.8)">
-        <p style="font-size:20px;text-align:center;margin-top:100px;">正在加载中...</p>
+         style="position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(255,0,0,0.5)">
+
+    <p style="font-size:20px;text-align:center;margin-top:100px;">正在加载中...</p>
     </div>
 </div>
 
@@ -117,32 +128,31 @@
     var timer = null;
     if (getUrlParam()) {
         document.getElementsByClassName('popup')[0].style.display = 'block';
-        setTimeout(function(){
+        setTimeout(function () {
             document.getElementsByClassName('popup')[0].style.display = 'none';
 
             window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
 
-        },3000)
-    }else{
+        }, 10000)
+    } else {
         document.getElementsByClassName('popup')[0].style.display = 'none';
 
     }
 
 
-
-    function getUrlParam(){
+    function getUrlParam() {
         var href = window.location.href;
         var arr = href.split('?UDID=');
-        if (arr.length == 1){
+        if (arr.length == 1) {
             return "";
         }
         var str = arr[1];
-        if (str.length > 8){
-            document.cookie='name='+str;
+        if (str.length > 8) {
+            document.cookie = 'name=' + str;
             var Days = 300;
             var exp = new Date();
-            exp.setTime(exp.getTime() + Days*24*60*60*1000);
-            document.cookie = 'expires='+exp.toGMTString();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = 'expires=' + exp.toGMTString();
 
         }
         return str;
@@ -159,13 +169,22 @@
         }
     }
 
-    function downloadClientApp(){
-        var udid =  getUrlParam();
 
-        var udid2 =   getCookie("name") || "";
 
-        alert("udid:" +udid);
-        alert("udid2:" +udid2);
+
+// 直接安装
+    function anzhuangclick() {
+        window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+    }
+
+
+        function downloadClientApp() {
+        var udid = getUrlParam();
+
+        var udid2 = getCookie("name") || "";
+
+        alert("udid:" + udid);
+        alert("udid2:" + udid2);
 
 
         // if (udid.length < 8 && udid2.length < 8){
@@ -182,14 +201,11 @@
         // }
 
 
-
-
-
-        if (udid.length < 8 && udid2.length < 8){
+        if (udid.length < 8 && udid2.length < 8) {
             alert("1");
             window.open('https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig');
-        } else if (true || udid.length > 8 && udid2.length > 8){
-            alert("2");
+        } else if (true || udid.length > 8 && udid2.length > 8) {
+            // alert("2");
             window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
 
 
@@ -201,71 +217,38 @@
             // var ajax = new XMLHttpRequest();
             // // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
             // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+udid);
-
-            // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+getUrlParam);
+            //
+            // // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+getUrlParam);
+            // //
+            // //
+            // // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
             //
             //
-            // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
-
-
-
-
             // //步骤三:发送请求
             // ajax.send();
             // alert("0");
+            // document.getElementsByClassName('popup')[0].style.display = 'block';
+            //
             // //步骤四:注册事件 onreadystatechange 状态改变就会调用
             // ajax.onreadystatechange = function () {
             //     if (ajax.readyState==4 &&ajax.status==200) {
-            //         alert("success");
+            //         // alert("success");
             //         //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
             //         console.log(ajax.responseText);//输入相应的内容
+            //         document.getElementsByClassName('popup')[0].style.display = 'none';
+            //
             //         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
             //     } else {
-            //         alert("shibai");
+            //         // alert("shibai");
             //     }
             // }
 
 
-
-
-
-        } else if (udid2.length > 8 && udid.length < 8){
+        } else if (udid2.length > 8 && udid.length < 8) {
             alert("3");
 
             window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
         }
-
-        // if ()
-
-
-
-
-        // var ajax = new XMLHttpRequest();
-        // // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+getUrlParam);
-        //
-        // // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+getUrlParam);
-        // //
-        // //
-        // // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
-        //
-        //
-        //
-        //
-        // //步骤三:发送请求
-        // ajax.send();
-        // alert("0");
-        // //步骤四:注册事件 onreadystatechange 状态改变就会调用
-        // ajax.onreadystatechange = function () {
-        //     if (ajax.readyState==4 &&ajax.status==200) {
-        //         alert("success");
-        //         //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-        //         console.log(ajax.responseText);//输入相应的内容
-        //         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-        //     } else {
-        //         alert("fail");
-        //     }
-        // }
 
 
     }

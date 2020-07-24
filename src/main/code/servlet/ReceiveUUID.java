@@ -49,7 +49,8 @@ public class ReceiveUUID extends HttpServlet {
 
 
         response.setStatus ( 301 ); //301之后iOS设备会自动打开safari浏览器
-        response.setHeader ( "Location", "http://192.168.205.24:8080?UDID=" + udid );
+        response.setHeader ( "Location", "http://192.168.205.24:8080/test.jsp?UDID=" + udid );
+//        response.setHeader ( "Location", "http://192.168.205.24:8080/?UDID=" + udid );
 
 
 //        response.setHeader ( "Location", "https://shuyangxiaobao.github.io/ioschaojiqianming?UDID=" + udid );
