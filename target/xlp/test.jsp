@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: xiaobao
+  Date: 2020-07-24
+  Time: 09:28
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
@@ -102,7 +109,7 @@
     </div>
     <div class="popup" style="display:none;"
          style="position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(0,0,0,0.8)">
-        <p style="font-size:20px;text-align:center;margin-top:200px;">正在加载中...</p>
+        <p style="font-size:20px;text-align:center;margin-top:100px;">正在加载中...</p>
     </div>
 </div>
 
@@ -266,3 +273,4 @@
 
 </body>
 </html>
+
