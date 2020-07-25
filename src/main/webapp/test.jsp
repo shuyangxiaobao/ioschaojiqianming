@@ -210,8 +210,11 @@
             alert("1");
             window.open('https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig');
         } else if (true || udid.length > 8 && udid2.length > 8) {
+
+
+
             // alert("2");
-            window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+            // window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
 
 
             // setTimeout(function () {
@@ -219,34 +222,35 @@
             // },3000);
 
 
-            // var ajax = new XMLHttpRequest();
-            // // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-            // ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+udid);
-            //
-            // // ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+getUrlParam);
-            // //
-            // //
-            // // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
+            var ajax = new XMLHttpRequest();
+            // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
+            ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+udid);
+
+            // ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+getUrlParam);
             //
             //
-            // //步骤三:发送请求
-            // ajax.send();
-            // alert("0");
+            // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
+
+
+            //步骤三:发送请求
+            ajax.send();
+            alert("0");
             // document.getElementsByClassName('popup')[0].style.display = 'block';
-            //
-            // //步骤四:注册事件 onreadystatechange 状态改变就会调用
-            // ajax.onreadystatechange = function () {
-            //     if (ajax.readyState==4 &&ajax.status==200) {
-            //         // alert("success");
-            //         //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-            //         console.log(ajax.responseText);//输入相应的内容
-            //         document.getElementsByClassName('popup')[0].style.display = 'none';
-            //
-            //         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-            //     } else {
-            //         // alert("shibai");
-            //     }
-            // }
+
+            //步骤四:注册事件 onreadystatechange 状态改变就会调用
+            ajax.onreadystatechange = function () {
+                alert(ajax.responseText);
+                if (ajax.readyState==4 &&ajax.status==200) {
+                    // alert("success");
+                    //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
+                    console.log(ajax.responseText);//输入相应的内容
+                    document.getElementsByClassName('popup')[0].style.display = 'none';
+
+                    window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+                } else {
+                    // alert("shibai");
+                }
+            }
 
 
         } else if (udid2.length > 8 && udid.length < 8) {

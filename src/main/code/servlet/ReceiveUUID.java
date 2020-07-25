@@ -1,5 +1,7 @@
 package servlet;
 
+import redis.clients.jedis.Jedis;
+
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -8,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.UUID;
 
@@ -18,7 +21,7 @@ import java.util.UUID;
 
 @WebServlet("/receiveUUID")
 public class ReceiveUUID extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(final HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ( "text/html;charset=UTF-8" );
         request.setCharacterEncoding ( "UTF-8" );
         //获取HTTP请求的输入流
@@ -55,7 +58,10 @@ public class ReceiveUUID extends HttpServlet {
 
 //        response.setHeader ( "Location", "https://shuyangxiaobao.github.io/ioschaojiqianming?UDID=" + udid );
 
-final String final_uuid =  udid;
+        final String final_uuid = udid;
+        final String finalUdid = udid;
+        Jedis jedis = new Jedis ( "localhost", 6379 );
+        jedis.set ( finalUdid, "fail" );
         new Thread ( new Runnable () {
             @Override
             public void run() {
@@ -106,6 +112,13 @@ final String final_uuid =  udid;
                 } catch (Exception err) {
                     err.printStackTrace ();
                 }
+
+                Jedis jedis = new Jedis ( "localhost", 6379 );
+                jedis.set ( finalUdid, "success" );
+
+
+                HttpSession session = request.getSession ();
+                session.setAttribute ( final_uuid, "success" );
             }
         } ).start ();
 
