@@ -102,25 +102,25 @@
 <div class="download_div">
 
 
-        <p class="download_title">test.jsp</p>
-        <img class="img_app_overview" src="img_app_overview.png" alt="Mr.chao">
-        <div class="download_button">
-            <button class="button button_green button_top" onclick="anzhuangclick();"><a href="javascript:void(0);">安装
-            </a>
+    <p class="download_title">test.jsp</p>
+    <img class="img_app_overview" src="img_app_overview.png" alt="Mr.chao">
+    <div class="download_button">
+        <button class="button button_green button_top" onclick="anzhuangclick();"><a href="javascript:void(0);">安装
+        </a>
 
-                <button class="button button_green button_top" onclick="downloadClientApp();"><a
-                        href="javascript:void(0);">首次安装</a>
+            <button class="button button_green button_top" onclick="downloadClientApp();"><a
+                    href="javascript:void(0);">首次安装</a>
             </button>
             <!-- <button class="button button_green button_top"><a href="{{androidAUrl}}">Android客户端下载</a></button> -->
             <div class="download_tips">
                 <strong>微信扫描22222</strong>下载,<strong>请点击右上角</strong>,<br/>选择“<strong>在浏览器中打开</strong>”即可安装下载
             </div>
-        </div>
+    </div>
 
     <div class="popup" style="display:none;"
          style="position:fixed;left:0;top:0;right:0;bottom:0;width:100%;height:100%;background:rgba(255,0,0,0.5)">
 
-    <p style="font-size:20px;text-align:center;margin-top:100px;">正在加载中...</p>
+        <p style="font-size:20px;text-align:center;margin-top:100px;">正在加载中...</p>
     </div>
 </div>
 
@@ -159,7 +159,6 @@
     }
 
     function getCookie(objName) {//获取指定名称的cookie的值
-        alert()
         var arrStr = document.cookie.split("; ");
         for (var i = 0; i < arrStr.length; i++) {
             var temp = arrStr[i].split("=");
@@ -170,40 +169,17 @@
     }
 
 
-
-
-// 直接安装
+    // 直接安装
     function anzhuangclick() {
-
-
-        // window.open('itms-services://?action=download-manifest&url=http://192.168.0.108:8080/Mytest.plist');
-
-
+        alert("xlp");
         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
     }
 
 
-        function downloadClientApp() {
+    function downloadClientApp() {
         var udid = getUrlParam();
 
         var udid2 = getCookie("name") || "";
-
-        alert("udid:" + udid);
-        alert("udid2:" + udid2);
-
-
-        // if (udid.length < 8 && udid2.length < 8){
-        //     alert("1");
-        //     window.open('./udid.mobileconfig');
-        // } else if (udid.length > 8 && udid2.length > 8){
-        //     alert("2");
-        //
-        //     window.open('itms-services://?action=download-manifest&url=http://192.168.0.108:8080/Mytest.plist');
-        // } else if (udid2.length > 8 && udid.length < 8){
-        //     alert("3");
-        //
-        //     window.open('itms-services://?action=download-manifest&url=http://192.168.0.108:8080/Mytest.plist');
-        // }
 
 
         if (udid.length < 8 && udid2.length < 8) {
@@ -211,56 +187,38 @@
             window.open('https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig');
         } else if (true || udid.length > 8 && udid2.length > 8) {
 
-
-
-            // alert("2");
-            // window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-
-
-            // setTimeout(function () {
-            //     window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-            // },3000);
-
-
-            var ajax = new XMLHttpRequest();
-            // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-            ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+udid);
-
-            // ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+getUrlParam);
-            //
-            //
-            // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);
-
-
-            //步骤三:发送请求
-            ajax.send();
-            alert("0");
-            // document.getElementsByClassName('popup')[0].style.display = 'block';
-
-            //步骤四:注册事件 onreadystatechange 状态改变就会调用
-            ajax.onreadystatechange = function () {
-                alert(ajax.responseText);
-                if (ajax.readyState==4 &&ajax.status==200) {
-                    // alert("success");
-                    //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
-                    console.log(ajax.responseText);//输入相应的内容
-                    document.getElementsByClassName('popup')[0].style.display = 'none';
-
-                    window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
-                } else {
-                    // alert("shibai");
-                }
-            }
-
-
+            ajaxFn(udid);
         } else if (udid2.length > 8 && udid.length < 8) {
             alert("3");
-
-            window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
         }
 
-
     }
+    function ajaxFn(udid){
+        var ajax = new XMLHttpRequest();
+        // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
+        ajax.open('get', 'http://192.168.0.108:8080/receiveUUIDh5?udid=' + udid);
+        //步骤三:发送请求
+        ajax.send();
+
+        ajax.onreadystatechange = function () {
+
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                if (ajax.responseText == "success") {
+                    // anzhuangclick();
+                    window.location.href = "itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist";
+                } else {
+                    setTimeout(function () {
+                        ajaxFn(udid);
+                    },5000);
+                }
+            } else {
+                // setTimeout(function () {
+                //     ajaxFn(udid);
+                // },5000);
+            }
+        }
+    }
+
 </script>
 
 </body>

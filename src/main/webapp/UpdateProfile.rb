@@ -16,15 +16,18 @@ if ARGV[0] == "true"
     devices = Spaceship.device.all
     puts "length:: #{devices.length}"
 
+
     profiles = Array.new
     profiles += Spaceship.provisioning_profile.development.all
 #    profiles += Spaceship.provisioning_profile.ad_hoc.all
 
     profiles.each do |p|
         if "#{p.name}" == "qdinfini.com.cn.dev" || "#{p.name}" == "qdinfini.com.NotificationService.dev"
-         puts "Updating #{p.name}"
-         p.devices = devices
-         p.update!
+          if devices.length < 50
+            puts "Updating #{p.name}"
+            p.devices = devices
+            p.update!
+          end
         end
     end
 end

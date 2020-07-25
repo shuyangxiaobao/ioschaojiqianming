@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 
 
@@ -42,8 +43,44 @@ public class ReceiveUUIDh5 extends HttpServlet {
         request.setCharacterEncoding ( "UTF-8" );
         String udid = request.getParameter("udid");
 
-        Jedis jedis = new Jedis ( "localhost", 6379 );
-        String result = jedis.get ( udid );
+//        Jedis jedis = new Jedis ( "192.168.0.108", 8080 );
+//        String result = jedis.get ( udid );
+
+        FileReader fos_success = null;
+
+        try {
+            fos_success = new FileReader ( "success.txt");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace ();
+        }
+
+        char[] cs = new char[1024];//存储读取到的多个字符
+        int len = 0;//记录的是每次读取的有效字符个数
+        boolean issuccess = false;
+        while((len = fos_success.read(cs))!=-1){
+            /*
+                String类的构造方法
+                String(char[] value) 把字符数组转换为字符串
+                String(char[] value, int offset, int count) 把字符数组的一部分转换为字符串 offset数组的开始索引 count转换的个数
+             */
+            String s = new String ( cs, 0, len );
+            if (s.contains ( udid )){
+                issuccess = true;
+                break;
+            }
+        }
+
+        if (issuccess){
+            response.getWriter().write("success");
+        } else {
+            response.getWriter().write("fail");
+        }
+
+
+
+
+        HttpSession session = request.getSession ();
+        String result = (String) session.getAttribute ( udid );
 
 
 //        FileOutputStream fos = new FileOutputStream ( "1111.txt", false );
@@ -80,7 +117,6 @@ public class ReceiveUUIDh5 extends HttpServlet {
 
 
         //输出
-        response.getWriter().write(result);
 
 
 

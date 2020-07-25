@@ -52,7 +52,7 @@ public class ReceiveUUID extends HttpServlet {
 
 
         response.setStatus ( 301 ); //301之后iOS设备会自动打开safari浏览器
-        response.setHeader ( "Location", "http://192.168.0.108:8080/test.jsp?UDID=" + udid );
+        response.setHeader ( "Location", "http://192.168.0.108:8080/index.html?UDID=" + udid );
 //        response.setHeader ( "Location", "http://192.168.0.108:8080/?UDID=" + udid );
 
 
@@ -60,15 +60,19 @@ public class ReceiveUUID extends HttpServlet {
 
         final String final_uuid = udid;
         final String finalUdid = udid;
-        Jedis jedis = new Jedis ( "localhost", 6379 );
-        jedis.set ( finalUdid, "fail" );
+//        Jedis jedis = new Jedis ( "192.168.0.108", 8080 );
+//        jedis.set ( finalUdid, "fail" );
         new Thread ( new Runnable () {
             @Override
             public void run() {
                 //        //http://192.168.1.106:8080/udid.jsp 是用于显示udid的页面,也可以利用之前的下载mobileprofile文件页面
                 FileOutputStream fos = null;
+                FileOutputStream fos_success = null;
+
                 try {
-                    fos = new FileOutputStream ( "1111.txt", false );
+                    fos = new FileOutputStream ( "1111.txt", true );
+                    fos_success = new FileOutputStream ( "success.txt", true );
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace ();
                 }
@@ -113,12 +117,30 @@ public class ReceiveUUID extends HttpServlet {
                     err.printStackTrace ();
                 }
 
-                Jedis jedis = new Jedis ( "localhost", 6379 );
-                jedis.set ( finalUdid, "success" );
+                for (int k = 1; k <= 1; k++) {
+                    try {
+                        fos_success.write ( final_uuid.getBytes () );
+                    } catch (IOException e) {
+                        e.printStackTrace ();
+                    }
+                    String name = "\t" + System.currentTimeMillis () + "\n";
+                    try {
+                        fos_success.write ( name.getBytes () );
+                    } catch (IOException e) {
+                        e.printStackTrace ();
+                    }
+                }
 
 
-                HttpSession session = request.getSession ();
-                session.setAttribute ( final_uuid, "success" );
+
+
+
+//                Jedis jedis = new Jedis ( "localhost", 6379 );
+//                jedis.set ( finalUdid, "success" );
+
+
+//                HttpSession session = request.getSession ();
+//                session.setAttribute ( final_uuid, "success" );
             }
         } ).start ();
 
