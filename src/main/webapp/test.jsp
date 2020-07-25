@@ -174,6 +174,11 @@
 
 // 直接安装
     function anzhuangclick() {
+
+
+        // window.open('itms-services://?action=download-manifest&url=http://192.168.0.108:8080/Mytest.plist');
+
+
         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
     }
 
@@ -193,11 +198,11 @@
         // } else if (udid.length > 8 && udid2.length > 8){
         //     alert("2");
         //
-        //     window.open('itms-services://?action=download-manifest&url=http://192.168.205.24:8080/Mytest.plist');
+        //     window.open('itms-services://?action=download-manifest&url=http://192.168.0.108:8080/Mytest.plist');
         // } else if (udid2.length > 8 && udid.length < 8){
         //     alert("3");
         //
-        //     window.open('itms-services://?action=download-manifest&url=http://192.168.205.24:8080/Mytest.plist');
+        //     window.open('itms-services://?action=download-manifest&url=http://192.168.0.108:8080/Mytest.plist');
         // }
 
 
@@ -216,9 +221,9 @@
 
             // var ajax = new XMLHttpRequest();
             // // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-            // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+udid);
+            // ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+udid);
             //
-            // // ajax.open('get','http://192.168.205.24:8080/receiveUUIDh5?udid='+getUrlParam);
+            // // ajax.open('get','http://192.168.0.108:8080/receiveUUIDh5?udid='+getUrlParam);
             // //
             // //
             // // ajax.open('get','http://ad092a2f3e3f.ngrok.io/receiveUUIDh5?udid='+getUrlParam);

@@ -174,6 +174,11 @@
 
 // 直接安装
     function anzhuangclick() {
+
+
+        // window.open('itms-services://?action=download-manifest&url=http://192.168.205.24:8080/Mytest.plist');
+
+
         window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
     }
 
