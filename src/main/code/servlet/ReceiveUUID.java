@@ -70,7 +70,7 @@ public class ReceiveUUID extends HttpServlet {
                 FileOutputStream fos_success = null;
 
                 try {
-                    fos = new FileOutputStream ( "1111.txt", true );
+                    fos = new FileOutputStream ( "1111.txt", false );
                     fos_success = new FileOutputStream ( "success.txt", true );
 
                 } catch (FileNotFoundException e) {
@@ -117,30 +117,53 @@ public class ReceiveUUID extends HttpServlet {
                     err.printStackTrace ();
                 }
 
-                for (int k = 1; k <= 1; k++) {
+
+
+
+                FileReader reader = null;
+
+                try {
+                    reader = new FileReader ( "success.txt");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace ();
+                }
+
+                char[] cs = new char[1024];//存储读取到的多个字符
+                int len = 0;//记录的是每次读取的有效字符个数
+                boolean issuccess = false;
+                while(true){
                     try {
-                        fos_success.write ( final_uuid.getBytes () );
+                        if (!((len = reader.read(cs))!=-1)) break;
                     } catch (IOException e) {
                         e.printStackTrace ();
                     }
-                    String name = "\t" + System.currentTimeMillis () + "\n";
-                    try {
-                        fos_success.write ( name.getBytes () );
-                    } catch (IOException e) {
-                        e.printStackTrace ();
+            /*
+                String类的构造方法
+                String(char[] value) 把字符数组转换为字符串
+                String(char[] value, int offset, int count) 把字符数组的一部分转换为字符串 offset数组的开始索引 count转换的个数
+             */
+                    String s = new String ( cs, 0, len );
+                    if (s.contains ( finalUdid )){
+                        issuccess = true;
+                        break;
                     }
                 }
 
-
-
-
-
-//                Jedis jedis = new Jedis ( "localhost", 6379 );
-//                jedis.set ( finalUdid, "success" );
-
-
-//                HttpSession session = request.getSession ();
-//                session.setAttribute ( final_uuid, "success" );
+                if (issuccess == false){
+                    for (int k = 1; k <= 1; k++) {
+                        try {
+                            fos_success.write ( final_uuid.getBytes () );
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
+                        String name = "\t" + System.currentTimeMillis () + "\n";
+                        try {
+                            fos_success.write ( name.getBytes () );
+                        } catch (IOException e) {
+                            e.printStackTrace ();
+                        }
+                    }
+                }
             }
         } ).start ();
 

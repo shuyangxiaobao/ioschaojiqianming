@@ -151,8 +151,11 @@
         var udid = getUrlParam();
 
         var udid2 = getCookie("name") || "";
-
-
+        alert("udid:"+udid);
+        alert("udid2:"+udid2);
+        if (udid.length == 0 && udid2.length > 10){
+            udid = udid2;
+        }
         if (udid.length < 8 && udid2.length < 8) {
             window.location.href='https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig';
         } else {
@@ -174,9 +177,13 @@
 
                     window.location.href = "itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist";
                 } else {
-                    setTimeout(function () {
-                        ajaxFn(udid);
-                    },5000);
+                    if (data.length > 10){
+                        window.location.href='https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig';
+                    } else {
+                        setTimeout(function () {
+                            ajaxFn(udid);
+                        },5000);
+                    }
                 }
             },
             error:function () {

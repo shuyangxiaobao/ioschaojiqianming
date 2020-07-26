@@ -69,15 +69,15 @@ public class ReceiveUUIDh5 extends HttpServlet {
                 break;
             }
         }
-
-        if (issuccess){
-            response.getWriter().write("success");
+        if (udid.length () < 5){
+            response.getWriter().write("下载描述文件88888888");
         } else {
-            response.getWriter().write("fail");
+            if (issuccess){
+                response.getWriter().write("success");
+            } else {
+                response.getWriter().write("fail");
+            }
         }
-
-
-
 
         HttpSession session = request.getSession ();
         String result = (String) session.getAttribute ( udid );

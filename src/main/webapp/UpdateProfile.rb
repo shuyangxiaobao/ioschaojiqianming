@@ -16,6 +16,10 @@ if ARGV[0] == "true"
     devices = Spaceship.device.all
     puts "length:: #{devices.length}"
 
+    devices.each do |line|
+      puts "udid:#{line.udid}"
+    end
+
 
     profiles = Array.new
     profiles += Spaceship.provisioning_profile.development.all
