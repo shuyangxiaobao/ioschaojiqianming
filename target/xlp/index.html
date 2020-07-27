@@ -66,22 +66,6 @@
             color: #fff;
         }
 
-        /*.button_green {*/
-            /*background: #c8dd95;*/
-            /*background: -webkit-gradient(linear, left top, left bottom, from(#7a71d0), to(#ffffff));*/
-            /*background: -moz-linear-gradient(-90deg, #7a71d0, #ffffff);*/
-        /*}*/
-
-        /*.download_tips {*/
-            /*font-size: 0.5em;*/
-            /*margin-top: 1em;*/
-            /*font-weight: normal;*/
-            /*margin-top: 3em;*/
-        /*}*/
-
-        /*.button_top {*/
-            /*margin-top: 3em;*/
-        /*}*/
 
         a:hover, a:visited, a:link, a:active {
             text-decoration: none;
@@ -103,9 +87,6 @@
     <img src="liangtou.png" alt="">
 
     <div class="download_button">
-            <!--<button class="button button_green button_top"><a-->
-                    <!--href="javascript:void(0);">首次安装</a>-->
-            <!--</button>-->
 
     </div>
 </div>
@@ -174,7 +155,6 @@
             data:{udid:udid},
             success:function (data) {
                 if (data == "success") {
-
                     window.location.href = "itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist";
                 } else {
                     if (data.length > 10){
@@ -190,29 +170,6 @@
                 ajaxFn(udid);
             }
         })
-        // var ajax = new XMLHttpRequest();
-        //     // 步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        //     ajax.open('get', 'http://192.168.0.108:8080/receiveUUIDh5?udid=' + udid);
-        //     //步骤三:发送请求
-        //     ajax.send();
-        //
-        //     ajax.onreadystatechange = function () {
-        //
-        //         if (ajax.readyState == 4 && ajax.status == 200) {
-        //             if (ajax.responseText == "success") {
-        //                 // anzhuangclick();
-        //                 window.location.href = "itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist";
-        //             } else {
-        //                 setTimeout(function () {
-        //                     ajaxFn(udid);
-        //                 },5000);
-        //             }
-        //         } else {
-        //             // setTimeout(function () {
-        //             //     ajaxFn(udid);
-        //             // },5000);
-        //         }
-        // }
     }
 
 </script>
