@@ -6,7 +6,7 @@
         <key>PayloadContent</key>
         <dict>
             <key>URL</key>
-            <string>http://192.168.206.63:8080/receiveUUID</string> <!--接收数据的接口地址 这是内网地址-->
+            <string>http://203.110.179.27:60513/receiveUUID</string> <!--接收数据的接口地址 这是内网地址-->
             <key>DeviceAttributes</key>
             <array>
                 <string>SERIAL</string>
@@ -19,9 +19,9 @@
             </array>
         </dict>
         <key>PayloadOrganization</key>
-        <string>http://192.168.203.123:8080</string>  <!--组织名称-->
+        <string>上海量投网络科技有限公司</string>  <!--组织名称-->
         <key>PayloadDisplayName</key>
-        <string>6666</string>  <!--安装时显示的标题-->
+        <string>无限易</string>  <!--安装时显示的标题-->
         <key>PayloadVersion</key>
         <integer>1</integer>
         <key>PayloadUUID</key>

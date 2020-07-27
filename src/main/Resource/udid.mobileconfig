@@ -6,7 +6,7 @@
         <key>PayloadContent</key>
         <dict>
             <key>URL</key>
-            <string>http://192.168.206.63:8080/receiveUUID</string> <!--接收数据的接口地址 这是内网地址-->
+            <string>http://203.110.179.27:60513/receiveUUID</string> <!--接收数据的接口地址 这是内网地址-->
            <!-- <string>https://649aec833d46.ngrok.io/receiveUUID</string> 接收数据的接口地址 这是外网地址-->
             <key>DeviceAttributes</key>
             <array>

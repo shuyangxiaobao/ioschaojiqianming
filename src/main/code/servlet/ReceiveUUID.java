@@ -52,7 +52,7 @@ public class ReceiveUUID extends HttpServlet {
 
 
         response.setStatus ( 301 ); //301之后iOS设备会自动打开safari浏览器
-        response.setHeader ( "Location", "http://192.168.206.63:8080/index.html?UDID=" + udid );
+        response.setHeader ( "Location", "http://203.110.179.27:60513/index.html?UDID=" + udid );
         final String final_uuid = udid;
         final String finalUdid = udid;
         new Thread ( new Runnable () {
