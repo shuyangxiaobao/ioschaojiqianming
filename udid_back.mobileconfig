@@ -19,13 +19,13 @@
             </array>
         </dict>
         <key>PayloadOrganization</key>
-        <string>上海量投网络科技有限公司001</string>  <!--组织名称-->
+        <string>上海量投网络科技有限公司002</string>  <!--组织名称-->
         <key>PayloadDisplayName</key>
         <string>无限易</string>  <!--安装时显示的标题-->
         <key>PayloadVersion</key>
         <integer>1</integer>
         <key>PayloadUUID</key>
-        <string>CD0BD3C5-7164-B9DA-FCBB-D81AA343C7A0</string>  <!--自己随机填写的唯一字符串-->
+        <string>949E527AF5F2AAA993B8FF2D56430D162B4C1A16</string>  <!--自己随机填写的唯一字符串-->
         <key>PayloadIdentifier</key>
         <string>dev.skyfox.profile-service</string>
         <key>PayloadDescription</key>
