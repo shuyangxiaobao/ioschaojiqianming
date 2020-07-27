@@ -43,8 +43,6 @@ public class ReceiveUUIDh5 extends HttpServlet {
         request.setCharacterEncoding ( "UTF-8" );
         String udid = request.getParameter("udid");
 
-//        Jedis jedis = new Jedis ( "192.168.0.108", 8080 );
-//        String result = jedis.get ( udid );
 
         FileReader fos_success = null;
 
