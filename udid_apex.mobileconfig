@@ -19,7 +19,7 @@
             </array>
         </dict>
         <key>PayloadOrganization</key>
-        <string>上海量投网络科技有限公司02</string>  <!--组织名称-->
+        <string>上海量投网络科技有限公司apex</string>  <!--组织名称-->
         <key>PayloadDisplayName</key>
         <string>无限易</string>  <!--安装时显示的标题-->
         <key>PayloadVersion</key>

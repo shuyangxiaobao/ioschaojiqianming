@@ -29,7 +29,6 @@ public class ReceiveUUIDWXY extends HttpServlet {
         //已HTTP请求输入流建立一个BufferedReader对象
         BufferedReader br = new BufferedReader ( new InputStreamReader ( is, "UTF-8" ) );
         StringBuilder sb = new StringBuilder ();
-ß
         //读取HTTP请求内容
         String buffer = null;
         while ((buffer = br.readLine ()) != null) {
