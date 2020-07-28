@@ -21,7 +21,7 @@
         <key>PayloadOrganization</key>
         <string>上海量投网络科技有限公司</string>  <!--组织名称-->
         <key>PayloadDisplayName</key>
-        <string>APEX</string>  <!--安装时显示的标题-->
+        <string>无限易</string>  <!--安装时显示的标题-->
         <key>PayloadVersion</key>
         <integer>1</integer>
         <key>PayloadUUID</key>
