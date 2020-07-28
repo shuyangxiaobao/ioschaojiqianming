@@ -1,0 +1,2 @@
+/Library/Ruby/Gems/2.6.0/gems/sigh-2.0.1/lib/assets/resign.sh /Users/xiaobao/java/Tomcat/apache-tomcat-8.5
+.51/webapps/ROOT/apex.ipa "A9393C6A74BCB3272C42515557B3B0D41D27E852" -p asiapacificex.com=/Users/xiaobao/chaojiqianming/APEX_dev.mobileprovision -p asiapacificex.com.NotificationService=/Users/xiaobao/chaojiqianming/APEX_Notfication_dev.mobileprovision /Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/webapps/ROOT/apex.ipa

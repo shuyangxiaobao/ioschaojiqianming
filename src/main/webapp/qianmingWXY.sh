@@ -1,0 +1,2 @@
+/Library/Ruby/Gems/2.6.0/gems/sigh-2.0.1/lib/assets/resign.sh /Users/xiaobao/java/Tomcat/apache-tomcat-8.5
+.51/webapps/ROOT/wxy.ipa "949E527AF5F2AAA993B8FF2D56430D162B4C1A16" -p qdinfini.com.cn=/Users/xiaobao/chaojiqianming/qdinfini.com.cn.dev.mobileprovision -p qdinfini.com.cn.NotificationService=/Users/xiaobao/chaojiqianming/qdinfini.com.NotificationService.dev.mobileprovision /Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/webapps/ROOT/wxy.ipa
