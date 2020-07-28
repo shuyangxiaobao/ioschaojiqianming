@@ -1,10 +1,10 @@
 require "spaceship"
 
-Spaceship.login('MP@quantdo.com.cn', 'Quantdo123456')
+Spaceship.login('app.mobile@asiapacificex.com', 'hWy3YQLyM')
 
 #参数传入true表示需要新增设备，例如：ruby UpdateProfile.rb true
 if ARGV[0] == "true"
-    file = File.open("/Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/bin/1111.txt")
+    file = File.open("/Users/xiaobao/java/Tomcat/apache-tomcat-8.5.51/bin/apex.txt")
     puts "Updating #{p}"
 
     file.each do |line|
