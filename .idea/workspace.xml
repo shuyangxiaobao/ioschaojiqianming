@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a988af-d08d-4982-8cc3-d0e5f6b6f146" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/UpdateProfileAPEX.rb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/UpdateProfileAPEX.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/qianmingAPEX.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/qianmingAPEX.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/qianmingWXY.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/qianmingWXY.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/xlp.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/xlp.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/xlp/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/xlp/META-INF/MANIFEST.MF" afterDir="false" />
-    </list>
+    <list default="true" id="24a988af-d08d-4982-8cc3-d0e5f6b6f146" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -322,7 +316,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1595924461285" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1595925520932" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -522,15 +516,15 @@
       <workItem from="1595816383948" duration="949000" />
       <workItem from="1595844590284" duration="3420000" />
       <workItem from="1595919523118" duration="417000" />
-      <workItem from="1595922821442" duration="1512000" />
+      <workItem from="1595922821442" duration="2573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105243000" />
+    <option name="totallyTimeSpent" value="106304000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="43" width="1690" height="981" extended-state="0" />
+    <frame x="145" y="23" width="1690" height="981" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8929134" visible="true" weight="0.21480583" />
