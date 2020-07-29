@@ -8,7 +8,7 @@
     <script src="js/jquery-2.1.0.min.js"></script>
 
     <script src="layer/layer.js"></script>
-    <title>无限易在线安装</title>
+    <title>无限易在线安装1</title>
     <style>
         * {
             margin: 0px;
@@ -125,6 +125,7 @@
     function anzhuangclick() {
         alert("xlp");
         window.open('itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/MytestWXY.plist');
+
     }
 
 
@@ -159,10 +160,11 @@
 
     // 判断浏览器类型，如果是safari 浏览器就下载
     function getAppVersion(){
+        alert("234567890")
         // alert(window.navigator.userAgent);
         if(window.navigator.userAgent.match(RegExp(/Safari/))){
             // downloadClientApp();
-            window.location.href('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+            window.location.href='itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist';
         } else{
             alert("请到Safari浏览器中访问");
             // window.location.href = "http://itunes.apple.com/us/app/id1458301150";
