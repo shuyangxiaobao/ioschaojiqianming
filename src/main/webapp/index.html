@@ -8,7 +8,7 @@
     <script src="js/jquery-2.1.0.min.js"></script>
 
     <script src="layer/layer.js"></script>
-    <title>Ad Hoc .ipa在线安装</title>
+    <title>无限易在线安装</title>
     <style>
         * {
             margin: 0px;
@@ -124,7 +124,7 @@
     // 直接安装
     function anzhuangclick() {
         alert("xlp");
-        window.open('itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/Mytest.plist');
+        window.open('itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/MytestWXY.plist');
     }
 
 
@@ -141,7 +141,7 @@
             udid = udid2;
         }
         if (udid.length < 8 && udid2.length < 8) {
-            window.location.href='https://www.quantdo.com.cn/ioskey/udid.mobileconfig';
+            window.location.href='https://www.quantdo.com.cn/ioskey/udid_wuxianyi.mobileconfig';
         } else {
             layer.load(1, {
                 shade: [0.6,'#000']
@@ -161,7 +161,11 @@
     function getAppVersion(){
         // alert(window.navigator.userAgent);
         if(window.navigator.userAgent.match(RegExp(/Safari/))){
-            downloadClientApp();
+            // downloadClientApp();
+            window.location.href('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/Mytest.plist');
+        } else{
+            alert("请到Safari浏览器中访问");
+            // window.location.href = "http://itunes.apple.com/us/app/id1458301150";
         }
 
     }
@@ -170,15 +174,16 @@
 
     function ajaxFn(udid){
         $.ajax({
-            url:'http://203.110.179.27:60513/receiveUUIDh5',
+            url:'http://203.110.179.27:60513/receiveUUIDh5wxy',
             type:'get',
             data:{udid:udid},
             success:function (data) {
                 if (data == "success") {
-                    window.location.href = "itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/Mytest.plist";
+                    window.location.href =
+                        "itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/MytestWXY.plist";
                 } else {
-                    if (data.length > 10){
-                        window.location.href='https://shuyangxiaobao.github.io/ioschaojiqianming/udid.mobileconfig';
+                    if (data.length > 20){
+                        window.location.href='https://www.quantdo.com.cn/ioskey/udid_wuxianyi.mobileconfig';
                     } else {
                         setTimeout(function () {
                             ajaxFn(udid);
