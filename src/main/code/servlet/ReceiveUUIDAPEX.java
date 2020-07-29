@@ -169,4 +169,3 @@ public class ReceiveUUIDAPEX extends HttpServlet {
 }
 
 
-//<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>

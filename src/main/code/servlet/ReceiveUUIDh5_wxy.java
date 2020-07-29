@@ -39,11 +39,8 @@ public class ReceiveUUIDh5_wxy extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ( "text/html;charset=UTF-8" );
-
         request.setCharacterEncoding ( "UTF-8" );
         String udid = request.getParameter("udid");
-
-
         FileReader fos_success = null;
 
         try {
@@ -90,4 +87,3 @@ public class ReceiveUUIDh5_wxy extends HttpServlet {
 
 
 
-//<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>

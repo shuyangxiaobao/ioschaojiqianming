@@ -124,7 +124,7 @@
     // 直接安装
     function anzhuangclick() {
         alert("xlp");
-        window.open('itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/MytestWXY.plist');
+        window.open('itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/MytestWXY.plist');
     }
 
 
@@ -141,7 +141,7 @@
             udid = udid2;
         }
         if (udid.length < 8 && udid2.length < 8) {
-            window.location.href='https://shuyangxiaobao.github.io/ioschaojiqianming/udid_wuxianyi.mobileconfig';
+            window.location.href='https://www.quantdo.com.cn/ioskey/udid_wuxianyi.mobileconfig';
         } else {
             layer.load(1, {
                 shade: [0.6,'#000']
@@ -162,6 +162,9 @@
         // alert(window.navigator.userAgent);
         if(window.navigator.userAgent.match(RegExp(/Safari/))){
             downloadClientApp();
+        } else{
+            alert("请到Safari浏览器中访问");
+            // window.location.href = "http://itunes.apple.com/us/app/id1458301150";
         }
 
     }
@@ -176,10 +179,10 @@
             success:function (data) {
                 if (data == "success") {
                     window.location.href =
-                        "itms-services://?action=download-manifest&url=https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/MytestWXY.plist";
+                        "itms-services://?action=download-manifest&url=https://www.quantdo.com.cn/ioskey/MytestWXY.plist";
                 } else {
                     if (data.length > 20){
-                        window.location.href='https://shuyangxiaobao.github.io/ioschaojiqianming/udid_wuxianyi.mobileconfig';
+                        window.location.href='https://www.quantdo.com.cn/ioskey/udid_wuxianyi.mobileconfig';
                     } else {
                         setTimeout(function () {
                             ajaxFn(udid);

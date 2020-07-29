@@ -90,4 +90,3 @@ public class ReceiveUUIDh5_apex extends HttpServlet {
 
 
 
-//<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>

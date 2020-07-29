@@ -168,4 +168,3 @@ public class ReceiveUUIDWXY extends HttpServlet {
 }
 
 
-//<string>https://shuyangxiaobao.github.io/ioschaojiqianming/src/main/webapp/xlp.ipa</string>
