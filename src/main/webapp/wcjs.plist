@@ -12,7 +12,7 @@
 					<string>software-package</string>
 					<key>url</key>
 					<!-- 这是内网地址，访问速度快 -->
-					<string>http://192.168.205.24:8080/wxy.ipa</string>
+					<string>http://203.110.179.27:60513/wcjs.ipa</string>
 
 				</dict>
 				<dict>
@@ -22,7 +22,7 @@
 					<true/>
 					<key>url</key>
 					<!-- 安装时需要显示的大图标（1024*1024）在服务器的路径 -->
-					<string>http://192.168.205.24:8080/big.png</string>
+					<string>http://203.110.179.27:60513/big.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -31,19 +31,19 @@
 					<true/>
 					<key>url</key>
 					<!-- 安装时需要显示的小图标（180*180）在服务器的路径 -->
-					<string>http://192.168.205.24:8080/small.png</string>
+					<string>http://203.110.179.27:60513/small.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>qdinfini.com.cn</string>
+				<string>com.zmmc.metalsmaterials</string>
 				<key>bundle-version</key>
-				<string>1.1.4</string>
+				<string>1.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>无限易</string>
+				<string>物产金属</string>
 			</dict>
 		</dict>
 	</array>
