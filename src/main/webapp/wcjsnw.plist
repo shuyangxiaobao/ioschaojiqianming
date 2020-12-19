@@ -12,7 +12,7 @@
 					<string>software-package</string>
 					<key>url</key>
 					<!-- 这是内网地址，访问速度快 -->
-					<string>http://192.168.205.24:8080/wcjsnw.ipa</string>
+					<string>http://192.168.205.24:8080/wcjs.ipa</string>
 
 				</dict>
 				<dict>
