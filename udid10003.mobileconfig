@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>PayloadContent</key>
+        <dict>
+            <key>URL</key>
+            <string>http://192.168.205.24:8086/sign/receiveUUID10003</string> <!--接收数据的接口地址 这是内网地址-->
+            <key>DeviceAttributes</key>
+            <array>
+                <string>SERIAL</string>
+                <string>MAC_ADDRESS_EN0</string>
+                <string>UDID</string>
+                <string>IMEI</string>
+                <string>ICCID</string>
+                <string>VERSION</string>
+                <string>PRODUCT</string>
+            </array>
+        </dict>
+        <key>PayloadOrganization</key>
+        <string>xxx有限公司</string>  <!--组织名称-->
+        <key>PayloadDisplayName</key>
+        <string>app名称</string>  <!--安装时显示的标题-->
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>PayloadUUID</key>
+        <string>7358641FFD76E1025AD4BF32D083ABA1323A63EB</string>  <!--自己随机填写的唯一字符串-->
+        <key>PayloadIdentifier</key>
+        <string>dev.skyfox.profile-service</string>
+        <key>PayloadDescription</key>
+        <string>本文件仅用来获取设备ID</string>   <!--描述-->
+        <key>PayloadType</key>
+        <string>Profile Service</string>
+    </dict>
+</plist>
