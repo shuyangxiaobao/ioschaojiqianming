@@ -1,6 +1,6 @@
 require "spaceship"
 
-Spaceship.login('MP@quantdo.com.cn', 'Quantdo123456')
+Spaceship.login('', '')
 
 #参数传入true表示需要新增设备，例如：ruby UpdateProfile.rb true
 if ARGV[0] == "true"
