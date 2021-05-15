@@ -1,6 +1,6 @@
 require "spaceship"
 
-Spaceship.login('app.mobile@asiapacificex.com', 'hWy3YQLyM')
+Spaceship.login('', '')
 
 #参数传入true表示需要新增设备，例如：ruby UpdateProfile.rb true
 if ARGV[0] == "true"
