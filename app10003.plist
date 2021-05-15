@@ -12,7 +12,7 @@
 					<string>software-package</string>
 					<key>url</key>
 					<!-- 这是内网地址，访问速度快 -->
-					<string>http://192.168.0.104:8086/app10003.ipa</string>
+					<string>http://192.168.0.104:8086/images/app10003.ipa</string>
 
 				</dict>
 				<dict>
@@ -22,7 +22,7 @@
 					<true/>
 					<key>url</key>
 					<!-- 安装时需要显示的大图标（1024*1024）在服务器的路径 -->
-					<string>http://192.168.0.104:8086/big.png</string>
+					<string>http://192.168.0.104:8086/images/big.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -31,7 +31,7 @@
 					<true/>
 					<key>url</key>
 					<!-- 安装时需要显示的小图标（180*180）在服务器的路径 -->
-					<string>http://192.168.0.104:8086/small.png</string>
+					<string>http://192.168.0.104:8086/images/small.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
